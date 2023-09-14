@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fede</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+</head>
+<body style="background-color: rgb(110, 125, 153);">
+    <div "card" style="padding: 10px; margin: 10px;"   > 
+        <div class="card-header" style="background-color: rgb(174, 197, 189);">
+          <h3>ESTO ES UN FORO</h3>
+        </div>
+        <div class="card-body" style="background-color: rgb(174, 197, 189);"> 
+          <h5 class="card-title">TEMATICA</h5>
+          <a  class="btn btn-primary" href="/agregar">Añadir un tema </a>
+        </div>
+         
+         <table class="table">
+            <thead>
+              <tr>
+                <th scope="col" style="background-color:gray;">N°</th>
+                <th scope="col"style="background-color:gray;">Tematica</th>
+                <th scope="col"style="background-color:gray;">Descripcion</th>
+                <th scope="col"style="background-color:gray;">Imagen</th>
+                <th scope="col"style="background-color:gray;">Fecha</th>
+                <th scope="col"style="background-color:gray;">Restaurar</th>
+                <th scope="col"style="background-color:gray;">Eliminar</th>
+              </tr>
+            </thead>
+            <tbody>  
+            <% tareas.forEach((item) => { %>
+              <tr>
+                <th scope="row"><%= item.id %></th>
+                <td><%= item.tematica %></td>
+                <td><%= item.descripcion %></td>
+                <td><%= item.imagen %></td>
+                <td><%= item.fecha %></td>
+                <td>
+                  <a type="button" class="btn btn-primary" href="/Editar/<%= item.id %>">Editar</a>
+                </td>
+                <td>
+                  <a type="button" class="btn btn-danger" href="/Eliminar/<%= item.id %>">Elimina</a>
+                </td>
+              </tr>
+            <% }) %>
+            </tbody>
+          </table>
+
+      </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+</body>
+</html>
